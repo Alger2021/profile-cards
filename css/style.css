@@ -26,9 +26,8 @@ section {
 }
 section .cards {
     margin: 0 15px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    grid-gap: 25px 15px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 @media (max-width: 575.98px) {
@@ -44,7 +43,22 @@ section .cards {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    width: calc((100% / 3) - 1%);
     border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+@media (max-width: 900px) {
+    section .cards {
+        flex-flow: column wrap;
+    }
+    .card {
+        width: 100%;
+        margin: 0 auto 20px;
+        text-align: center;
+    }
 }
 
 section .cards .card .img {
@@ -74,12 +88,6 @@ section .cards .card .stars {
 section .cards .card p {
     padding: 0 20px;
     line-height: 1.65;
-}
-
-@media (max-width: 830px) {
-    section .cards .card {
-        text-align: center;
-    }
 }
 
 section .cards .card .buttons {
@@ -114,9 +122,3 @@ section .cards .card .buttons a:first-child:hover {
 section .cards .card .buttons a:first-child:hover {
     margin-left: 0;
 }
-
-/* @media (min-width: 576px) and(max-width: 768px) {
-    section .card:last-of-type {
-        grid-column: 1/3;
-    }
-} */
